@@ -47,6 +47,7 @@ test('init com --sim aplica tudo, não sobrescreve e na segunda vez não há nad
   assert.match(fs.readFileSync(path.join(raiz, '.gitignore'), 'utf8'), /^graphify-out\/$/m);
   const hook = fs.readFileSync(path.join(raiz, '.git', 'hooks', 'post-merge'), 'utf8');
   assert.match(hook, /echo antigo[\s\S]*fengshui grafos/);
+  assert.doesNotMatch(hook.slice(hook.indexOf('# fengshui')), /\r/);
   assert.ok(fs.existsSync(path.join(raiz, '.graphifyignore')));
   assert.ok(fs.existsSync(path.join(raiz, 'docs', 'referencia', 'README.md')));
   assert.match((await init(raiz, s, { sim: true })).texto, /Nada a instalar/);

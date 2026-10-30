@@ -49,7 +49,8 @@ export function planoInit(raiz, sis) {
     const hook = path.join(repo, '.git', 'hooks', 'post-merge');
     if (fs.existsSync(path.join(repo, '.git', 'hooks')) && !(lerTexto(hook) ?? '').includes(MARCA_HOOK)) {
       acoes.push({ descricao: `${fs.existsSync(hook) ? 'Acrescentar ao' : 'Criar o'} hook ${rel(raiz, hook)} (grafo atualizado sozinho depois de merge/pull)`,
-        aplicar: () => { acrescentar(hook, (fs.existsSync(hook) ? '\n' : '#!/bin/sh\n') + lerTexto(path.join(MODELOS, 'post-merge'))); try { fs.chmodSync(hook, 0o755); } catch { /* Windows */ } } });
+        // LF sempre: com CRLF (checkout no Windows) o sh do git quebra no hook.
+        aplicar: () => { acrescentar(hook, ((fs.existsSync(hook) ? '\n' : '#!/bin/sh\n') + lerTexto(path.join(MODELOS, 'post-merge'))).replace(/\r\n/g, '\n')); try { fs.chmodSync(hook, 0o755); } catch { /* Windows */ } } });
     }
   }
   const ref = path.join(raiz, 'docs', 'referencia', 'README.md');
