@@ -1,0 +1,23 @@
+# fengshui: o grafo é de NAVEGAÇÃO do código de produção. Testes, docs, scripts e saídas de ferramentas poluem a
+# busca (a pergunta cai num teste em vez do código). O teste se acha pela convenção de nome.
+tests/
+Tests/
+test/
+**/__tests__/
+**/*.test.ts
+**/*.test.tsx
+**/*.test.js
+**/*.spec.ts
+**/*.spec.tsx
+**/*.spec.js
+e2e/
+docs/
+scripts/
+*.md
+coverage/
+graphify-out/
+# Saídas de teste e de mutação (o Stryker deixa cópias inteiras do src).
+.stryker-tmp/
+reports/
+test-results/
+playwright-report/

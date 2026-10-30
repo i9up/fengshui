@@ -1,0 +1,32 @@
+{
+  "name": "@i9up/fengshui",
+  "version": "0.1.0",
+  "description": "Dieta de Contexto: organiza projetos para agentes de IA (Claude, Cursor, Codex) gastarem menos tokens — grafo do código sem LLM, instruções enxutas e faxina do dia a dia.",
+  "type": "module",
+  "bin": {
+    "fengshui": "bin/fengshui.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "modelos",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:cobertura": "node --test --experimental-test-coverage"
+  },
+  "keywords": [
+    "claude",
+    "cursor",
+    "codex",
+    "context",
+    "tokens",
+    "graphify",
+    "agents"
+  ],
+  "license": "MIT"
+}

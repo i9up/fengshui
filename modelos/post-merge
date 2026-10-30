@@ -1,0 +1,7 @@
+# fengshui: atualiza o grafo do código depois de merge/pull
+# Roda em segundo plano e nunca bloqueia o git. Só parser, sem LLM e sem custo.
+if command -v fengshui >/dev/null 2>&1; then
+  (fengshui grafos >/dev/null 2>&1 &)
+else
+  (npx --no-install @i9up/fengshui grafos >/dev/null 2>&1 &)
+fi
