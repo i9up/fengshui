@@ -4,6 +4,8 @@
 > fluir. Aqui o espaço é o seu projeto, e a energia são os tokens dos agentes de IA (Claude, Cursor, Codex):
 > cada coisa no lugar certo, o que é usado sempre à mão, o resto guardado mas fácil de achar.
 
+> Enquanto o pacote não está no npm, use direto do GitHub: `npx github:i9up/fengshui diagnostico`.
+
 ```bash
 npx @i9up/fengshui diagnostico      # mede o que os agentes carregam a cada turno e diz o que enxugar
 npx @i9up/fengshui init             # instala o graphify e a estrutura (pergunta antes; nunca sobrescreve)
